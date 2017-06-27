@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Jan-2017 às 00:33
--- Versão do servidor: 10.1.13-MariaDB
--- PHP Version: 7.0.6
+-- Generation Time: 28-Jun-2017 às 01:44
+-- Versão do servidor: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ot`
+-- Database: `gesior`
 --
 
 -- --------------------------------------------------------
@@ -62,10 +62,7 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `name`, `password`, `secret`, `type`, `premdays`, `coins`, `lastday`, `email`, `creation`, `key`, `email_new`, `email_new_time`, `rlname`, `location`, `birth_date`, `gender`, `page_access`, `email_code`, `next_email`, `premium_points`, `create_date`, `create_ip`, `last_post`, `flag`, `vote`, `loyalty_points`, `authToken`) VALUES
-(1, '1', '2f165e4cf99cd9298fas65d6s5da7924cfc9c', NULL, 1, 0, 0, 0, '318801@gmail.com', 1429670486, '', '', 0, '', '', '', '', 3, '', 0, 0, 0, 2147483647, 0, 'unknown', 0, 0, ''),
-(4383, '451994', '3f90224a065128ad8d4dace6dba1989f29e07775', NULL, 1, 363, 0, 1480344432, 'victorfasanoraful@gmail.com', 1467780487, 'XU7I-SO3A-NODA-SELO', 'victorfasanoraful@gmail.com', 1469064339, 'Victor Fasano', 'Sao paulo', '4/5/1994', 'male', 3, '', 0, 5455005, 0, 2130706433, 1470611481, 'unknown', 0, 625, '4MP9UVk5sQ6Ay3EI7gdSa2xq8YJHjv'),
-(4384, '101010', '3f90224a065128ad8d4dace6dba1989f29e07775', NULL, 1, 0, 0, 0, '33@gmail.com', 1468805192, '', '', 0, '', '', '', '', 0, '', 0, 0, 0, 2130706433, 0, 'unknown', 0, 0, ''),
-(4385, '333333333', '7068120e66aea0c64b1fde1b3be7b88e62e53be2', NULL, 1, 0, 0, 0, 'victorfasanor2aful@gmail.com', 1468807640, '', '', 0, '', '', '', '', 0, '', 0, 0, 0, 2130706433, 0, 'unknown', 0, 0, '');
+(1, '1', '2f165e4cf99cd9298fas65d6s5da7924cfc9c', NULL, 1, 0, 0, 0, 'tibia@gmail.com', 1429670486, '', '', 0, '', '', '', '', 3, '', 0, 0, 0, 2147483647, 0, 'unknown', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -92,14 +89,6 @@ CREATE TABLE `account_bans` (
   `banned_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `account_bans`
---
-
-INSERT INTO `account_bans` (`account_id`, `reason`, `banned_at`, `expires_at`, `banned_by`) VALUES
-(1, '1, 1', 1480347712, 2344261312, 5771),
-(4384, '1, 1', 1480347738, 2344261338, 5771);
-
 -- --------------------------------------------------------
 
 --
@@ -114,13 +103,6 @@ CREATE TABLE `account_ban_history` (
   `expired_at` bigint(20) NOT NULL,
   `banned_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `account_ban_history`
---
-
-INSERT INTO `account_ban_history` (`id`, `account_id`, `reason`, `banned_at`, `expired_at`, `banned_by`) VALUES
-(1, 4383, '2', 1470605092, 1470605092, 1);
 
 -- --------------------------------------------------------
 
@@ -165,13 +147,6 @@ CREATE TABLE `guilds` (
   `create_ip` int(11) NOT NULL DEFAULT '0',
   `balance` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `guilds`
---
-
-INSERT INTO `guilds` (`id`, `name`, `ownerid`, `creationdata`, `motd`, `description`, `guild_logo`, `create_ip`, `balance`) VALUES
-(1, 'Whata Hell', 5771, 1468294077, '', 'New guild. Leader must edit this text :)', 0x313436383239343037373b646174613a696d6167652f6769663b6261736536342c52306c474f446c68514142414150634141414141414167414142414141426741414267494143454941436b494144454941446b4941446b514145495141456f514146495141466f5141466f5941474d5941474e6a556d73594147744b4147746a556d746a576d7472576e4d5941484e5341484e72576e4e72593373594148736841487453414874614148747a5933747a6134516841495261414952614349526a4349523761345237633477684149786a434979456334794565355168414a5272434a534d65357770414a7872434a787a434a794d6535794d684a7955684b5570414b567a434b5637434b5755684b57636a4b3070414b3137434b32636a4c5570414c5637434c5745434c576c6c4c57746c4c3078414c3245434c324d434c32316e4d5978414d614d434d6155434d613170633478414d3655434d363972645978414e5935414e6155434e6163434e3435414f2f657876666e7a762f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f79483542414541414645414c414141414142414145414141416a2b414b4e4543514367494d454143424d614e4b6a774945494143523832584168526f734f43416a4e7144494345434a4b50486b4d7943596c6b704567695445717137496753704d6d534b564e2b424e6b785a514162476a554347466d795a63715750556b7947597079364a4f6951486c366a456c7a4a70475141456a677a446c514a644759517a753672506b7861396169566e334b354e6e314b63696f55334d475942717a3645696c4d4a64794e5174544a6b69554872757964456b4567496359564b75614841757a37744359543868364e566f54373958446b4c4d69415a4342525741414d346d7566496c334a52496749427759534a444167516f634d7a305870706c334a6d584c5644482f334e454368496b574c585a6b3172736a41634944466d3672734a424167414146514754694a644969416f4d45437851343244446a4b5a4d416c533854595641516749414443784c2b474341674945414243302b424741415141516752484245576a485a674167675142774149754e39517675427842632b743939414f324d4757303034426e4a424545556b306d4951525267685278417348454151414345793051414242423051414167675062426a41427570565a454551437a375949494d4e42684641424156656c6d45424434366741476b5858464144697755454145514c454946515630307041516c52424431495749515251627777516764516a6c4145677744733846706761303357517848486d61444341777751304a304354437751514163416243415a5351514738494345456c37775541476c4d6141414141636b55634e615638615730674d4a4f464744624a6b5a344141537667584234414836465561454351416b30454f456778365558463432695a4445416739636c78315657524952774b5146624a425a4241596755594143437844775942482b4b775267416c356d4b696745445155416f4943504368786746334d4154426b41536a474343744a7a547651416746764450724157456230426b494f4542546841684a67354a424845726970305a4d4777736e34567741704a4d4c4341545a3865364251414c7851686751456a4b624242437a36715249514b4144516f78486f4353446a6f41756c35564a715653346c57684c4974466175755376516d4b59414451484145774b78443968564145454c514b63514a41594241524849647565646a41685a6b43454151526e53386c4d493639545153615577574641472b4c6d7631314b364b356864416456725a2b3441434f46514a41413146524b41415633327136785954424851675951414f455042415479795a42536b4151675278595770504c53633041437641796c4856536266383030635232316f65616e6c5a39786b4133795a51524137444f70575a714276594b55542b724343666c65354776336f5573616237476f42443132574e31304d5043536278674146306d51567441515759454d41494146545847684e6c5a3751543155516346664544443536416d585650425a3244455865654c4951414d365132457043354267324143707131314c6c416d4b56476b374d4739494379413141443052486c526777365177494b4643464333552f4e414941424b7942634a56746d73657a35556b546c746344304147697137613553427a427474522b6258775141755431515541634d756944415a46687078766e666e6e2f464642494f4641426a414161676752416b4e49494148454149644a7542416774676743496b4a41453779747175647249736c78786d4d766754534a597959784956794b6f41524141425175416e4241433449416c30497739434b4865434771424d4344333458674677344b4e6c59636f3948646c64464862696b5365774a43582b45597459567a62676e32414a5956525453704b454d4559445a786c514e797049414c3161307a4d4d476b676e5a6c6e5453495a56706377416759467a4330434f4c694343437a43675277525267417263746f41494f4941425a45456345725448753851677759655355785549456843426c6a7846616b5777674147494978344437476f466739494c536741514d5a37465a535a303347486b674149457930305264514b676752454b344b69524145423477364b4c42794f47756a6836366f716549354a71356a6944414a53736136344c35534d4c4d49496b464541334c4e6c5a4168696746636241524965396f31705969436739397a776c5830666b79646c6f756138574c4d55434d78795763694a6a52537a31386965646d654d4469476566566a5a6f4c5639425351474d554951446d43416c725153434145716d484c64395249636349556c5a56424b304670514843506a2b61684142756b615763526242415267436b676f59634143364b4b55316b6253682f727a794759486d4b674c42536f493073556d45635a5a724178343067625069346a596677695368636c466b46596b49417535674c5a6c5753596b2f665a4f3537786e76626b785a436a7a74395a4b7274415249426d68426a7867774e73574d4d77674530413842447443567439776c6d7a506c7a503532383858623351636942466a5665416f4349664f6f7a4334586c4d785051496f7059626154595242355147356134494146744c4668367a4f41653743796c634b38425a3559736335536c374b554135545651674567674145535567535552693473512f6f4956307543522b57416a69576f4d6b494f436c436244637a4c41766e71774c6d415971386668724f61666a724b543635694c7a2b2b6255474d564934424c6d444c47627a454b596954584662676d553348644d576a7167332b514c735530456367427141494c68714c5a4f7a326c74346d315732516f577732475743416d49586b63556b514151502b537357694a6957536f5451713934424c555341594d56787a66427262376c6931754a416c4e5343747246587531726152464f424e4c786957644a4b77676752383569324f79654e6a33706e4248536f46767463384446412b64744c79584f78314f78694b38654a344e77344b747236395178316656684936716a48426b4e6f53514e6a736c4a53754f63596b46393569666366576b614e4d6c79316e49347130466d5345463152517158495662336354366a764e37455a794b456e4d6f774a67684353556349337a50416c58636b7866565049756342656379335342306a2b674c74646c2b6c506b56316547344b2b6f3248647553773451453643724b7562596a2b46306d366732544b547039704a37527430746a724d595a674f7a465373363347482b5948736231386a6f5679357370534a6b65676d3641464441417a49496a4833745674546473466b7839514f4c522b66363353315367415133304c4d6b6434766b42644f454a35716c4d354b7a367061455461432b47564843546e436f573077742b596339477a4347645473586d3041414134685774454347554a436c787457796b705a6e46532f59747134555a414b6f7a724f71567932445545355356424b70794c496b45784749474b544459706b6a4243695141524c6f65746572766b477847554942436d416741396a4f64743275732b774b5a44766233566b495169685167512b6b494e4851316f675366434344456e6a6732786e7741416c5177494a363235734645694f33422b68393733716a674154762f72594853694144483651374d45505167517a364c514e30553855484151413443525474677873732f4e3479304d48424e773774496477414d4277507563674c566533774b45426835496f4f434141414f773d3d, 0, 0);
 
 --
 -- Acionadores `guilds`
@@ -226,13 +201,6 @@ CREATE TABLE `guild_membership` (
   `nick` varchar(15) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `guild_membership`
---
-
-INSERT INTO `guild_membership` (`player_id`, `guild_id`, `rank_id`, `nick`) VALUES
-(5771, 1, 1, '');
-
 -- --------------------------------------------------------
 
 --
@@ -245,15 +213,6 @@ CREATE TABLE `guild_ranks` (
   `name` varchar(255) NOT NULL COMMENT 'rank name',
   `level` int(11) NOT NULL COMMENT 'rank level - leader, vice, member, maybe something else'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `guild_ranks`
---
-
-INSERT INTO `guild_ranks` (`id`, `guild_id`, `name`, `level`) VALUES
-(1, 1, 'the Leader', 3),
-(2, 1, 'a Vice-Leader', 2),
-(3, 1, 'a Member', 1);
 
 -- --------------------------------------------------------
 
@@ -420,13 +379,6 @@ CREATE TABLE `newsticker` (
   `icon` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `newsticker`
---
-
-INSERT INTO `newsticker` (`id`, `date`, `text`, `icon`) VALUES
-(35, 1467953991, 'Testando versÃ£o 1.0.1 do website.', 'newsicon_cipsoft');
-
 -- --------------------------------------------------------
 
 --
@@ -537,11 +489,7 @@ INSERT INTO `players` (`id`, `name`, `group_id`, `account_id`, `level`, `vocatio
 (3, 'Sorcerer Sample', 1, 1, 8, 1, 185, 185, 4200, 44, 98, 15, 76, 128, 0, 0, 35, 35, 0, 100, 1, 0, 0, 0, '', 420, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 0, 0, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (4, 'Druid Sample', 1, 1, 8, 2, 185, 185, 4200, 44, 98, 15, 76, 128, 0, 0, 35, 35, 0, 100, 1, 0, 0, 0, '', 420, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 0, 0, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (5, 'Paladin Sample', 1, 1, 8, 3, 185, 185, 4200, 44, 98, 15, 76, 128, 0, 0, 35, 35, 0, 100, 1, 0, 0, 0, '', 420, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 0, 0, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 'Knight Sample', 1, 1, 8, 4, 185, 185, 4200, 44, 98, 15, 76, 128, 0, 0, 35, 35, 0, 100, 1, 0, 0, 0, '', 420, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 0, 0, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5771, 'GM Ignouth', 5, 4383, 1, 0, 150, 150, 0, 69, 76, 78, 58, 266, 0, 0, 5, 5, 0, 100, 1, 1040, 1025, 7, 0x010000000202ffffffff03d00700001a001b00000000fe, 420, 1, 1480348091, 16777343, 1, 0, 0, 1480348091, 63, 2592, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 2130706433, 1467780489, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5772, 'Teste', 1, 4384, 1, 0, 150, 150, 0, 69, 76, 78, 58, 128, 0, 0, 5, 5, 0, 100, 6, 0, 0, 0, '', 420, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 2130706433, 1468805193, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5773, 'Hah', 1, 4385, 1, 0, 150, 150, 0, 69, 76, 78, 58, 128, 0, 0, 5, 5, 0, 100, 6, 0, 0, 0, '', 420, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 2130706433, 1468807640, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5774, 'Crumble Numble', 1, 4383, 1, 0, 150, 150, 0, 69, 76, 78, 58, 128, 0, 0, 5, 5, 0, 100, 6, 0, 0, 0, '', 420, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 2130706433, 1470607359, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(6, 'Knight Sample', 1, 1, 8, 4, 185, 185, 4200, 44, 98, 15, 76, 128, 0, 0, 35, 35, 0, 100, 1, 0, 0, 0, '', 420, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 43200, -1, 2520, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, 10, 0, '', '', 0, 0, 0, '', 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Acionadores `players`
@@ -580,13 +528,6 @@ CREATE TABLE `player_deaths` (
   `unjustified` tinyint(1) NOT NULL DEFAULT '0',
   `mostdamage_unjustified` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `player_deaths`
---
-
-INSERT INTO `player_deaths` (`player_id`, `time`, `level`, `killed_by`, `is_player`, `mostdamage_by`, `mostdamage_is_player`, `unjustified`, `mostdamage_unjustified`) VALUES
-(5772, 356363535, 1, '5771', 1, '', 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -645,23 +586,6 @@ CREATE TABLE `player_items` (
   `attributes` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `player_items`
---
-
-INSERT INTO `player_items` (`player_id`, `pid`, `sid`, `itemtype`, `count`, `attributes`) VALUES
-(5771, 2, 101, 2173, 1, 0x160100),
-(5771, 3, 102, 1987, 1, ''),
-(5771, 4, 103, 2651, 1, ''),
-(5771, 5, 104, 2530, 1, ''),
-(5771, 6, 105, 2398, 1, ''),
-(5771, 11, 106, 26052, 1, ''),
-(5771, 102, 107, 2160, 1, 0x0f01),
-(5771, 102, 108, 2160, 98, 0x0f62),
-(5771, 102, 109, 2120, 1, ''),
-(5771, 106, 110, 2643, 1, ''),
-(5771, 106, 111, 2358, 1, '');
-
 -- --------------------------------------------------------
 
 --
@@ -713,18 +637,6 @@ CREATE TABLE `player_storage` (
   `value` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `player_storage`
---
-
-INSERT INTO `player_storage` (`player_id`, `key`, `value`) VALUES
-(5771, 50722, 1480348101),
-(5771, 299551, 1480347144),
-(5771, 10001001, 8781827),
-(5771, 10002001, 2),
-(5771, 10002004, 256),
-(5771, 10002011, 23);
-
 -- --------------------------------------------------------
 
 --
@@ -760,15 +672,6 @@ CREATE TABLE `store_history` (
   `coin_amount` int(12) NOT NULL,
   `time` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `store_history`
---
-
-INSERT INTO `store_history` (`account_id`, `mode`, `description`, `coin_amount`, `time`) VALUES
-(4383, 0, 'Snow Pelt', -5, 1480346906),
-(4383, 0, 'Racing Bird', -5, 1480346925),
-(4383, 0, 'Warrior Addon', -5, 1480346967);
 
 -- --------------------------------------------------------
 
@@ -807,14 +710,6 @@ CREATE TABLE `z_forum` (
   `news_icon` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `z_forum`
---
-
-INSERT INTO `z_forum` (`id`, `first_post`, `last_post`, `section`, `replies`, `views`, `author_aid`, `author_guid`, `post_text`, `post_topic`, `post_smile`, `post_date`, `last_edit_aid`, `edit_date`, `post_ip`, `icon_id`, `news_icon`) VALUES
-(210, 210, 1437315338, 1, 0, 34, 2, 7, '<p>[letter]A[/letter]gora &eacute; pra valer!</p>\r\n<p>Entraremos em um novo tempo, nosso servidor esta muito mais maduro e pronto pra trabalhar e trazer o melhor cont&uacute;do open tibia pra voc&ecirc;, ent&atilde;o n&atilde;o perca tempo e venha fazer parte dessa familia. Temos muitas novidades, que at&eacute; o dia da reinaugura&ccedil;&atilde;o iremos postar pra voc&ecirc;s, &eacute; s&oacute; o come&ccedil;o de um novo tempo, ent&atilde;o n&atilde;o perca tempo, crie j&aacute; sua conta e aguarde pelo recome&ccedil;o!</p>\r\n<h3>Informa&ccedil;&otilde;es de conex&atilde;o</h3>\r\n<ul>\r\n<li><strong>Vers&atilde;o:</strong>&nbsp;10.76 - 10.79</li>\r\n<li><strong>IP:</strong>&nbsp;tibiamax.com</li>\r\n<li><strong>Porta:</strong>&nbsp;7171</li>\r\n<li><strong>Exp:</strong>&nbsp;200x (estagiadas, veja os stages em&nbsp;<a href="?subtopic=serverinfo">Server Info</a>)</li>\r\n</ul>\r\n<h3>Novidades</h3>\r\n<p>Uma das principais novidades, que voc&ecirc; j&aacute; deve ter percebido &eacute; nosso site, esta completamente limpo, simples e objetivo, com o layout global e acompanhado de algumas novas funcionalidades.</p>\r\n<p><img style="float: right;" title="New Shop" src="layouts/monteiro/images/shop/info.jpg" alt="" width="250" height="203" /></p>\r\n<p>Nosso sistema de doa&ccedil;&otilde;es e de compra de itens e servi&ccedil;os foi totalmente refeito e melhorado, agora ele se encontra na&nbsp;<a href="?subtopic=accountmanagement&amp;action=manage">p&aacute;gina principal de sua conta</a>. L&aacute; tamb&eacute;m voc&ecirc; vai encontrar hist&oacute;rico de doa&ccedil;&otilde;es, status de suas doa&ccedil;&otilde;es, hist&oacute;rico da compra de itens e servi&ccedil;os no shopping, produtos a serem ativados. Bastante coisa n&eacute; ? Foi por isso que criamos um super tutorial, lhe mostrando como usar todas essas novidades, com praticidade e facilidade, basta voc&ecirc; entrar em&nbsp;<a href="?subtopic=serverinfo">Server Info</a>, logo abaixo das informa&ccedil;&otilde;es do servidor voc&ecirc; ver&aacute; um box falando desses sistemas novos, e os links para os tutoriais.</p>\r\n<p>Esperamos que voc&ecirc; goste e que possa com mais facilidade ajudar o servidor a crescer, e assim possamos trazer muito mais conte&uacute;do para voc&ecirc;s.</p>\r\n<h3>Informa&ccedil;&otilde;es do servidor</h3>\r\n<ul>\r\n<li>Task system, com bosses e ranks</li>\r\n<li>Gray Beach City completa 100% (incluindo Subsolo)</li>\r\n<li>Monstros 100%</li>\r\n<li>Todas montarias</li>\r\n<li>Taming system funcionando 100%</li>\r\n<li>Wrath of Emperor Quest</li>\r\n<li>War System 100%</li>\r\n<li>Roshamull Completa100% (incluindo subsolo)</li>\r\n<li>Oramond Full</li>\r\n<li>Sem bug de pegar items com o browse field</li>\r\n<li>Blood Herb Quest 100%</li>\r\n<li>Chayenne Realm Quest</li>\r\n<li>Pythius The Rotten Quest 100%</li>\r\n<li>Lions Rock quest</li>\r\n<li>Taming Walker e Noble Lion</li>\r\n<li>Reward System</li>\r\n<li>Loyalty System</li>\r\n<li>Exclusive Events</li>\r\n<li>Exclusive Quests</li>\r\n<li>Roshamuul Prison</li>\r\n<li>War Anti-Entrosa</li>\r\n<li>Engine TFS 1.2, muito mais est&aacute;vel</li>\r\n<li>Marriage System</li>\r\n</ul>\r\n<p>Entre essas e outras mais que voc&ecirc; ver&aacute; quando iniciar sua jornada aqui, esperamos que o servidor possa o satisfazer, por&eacute;m o que n&atilde;o satisfazer esperamos tamb&eacute;m que voc&ecirc; possa nos falar, para que assim possamos encontrar uma maneira de deixa-los feliz.</p>\r\n<p>Equipe Tibiamax<br />Buscando sua divers&atilde;o!</p>', 'ReinauguraÃ§Ã£o Marcada !', 0, 1437315338, 2, 1437333096, '200.181.194.117', 0, 'newsicon_community_big'),
-(211, 211, 1470611481, 1, 0, 2, 4383, 5774, '<p>Todos da comunidade dando um salve a todos os desenvolvedores desse game.</p>', 'Say Hey Ha!!', 0, 1470611481, 0, 0, '127.0.0.1', 0, 'newsicon_community_big');
-
 -- --------------------------------------------------------
 
 --
@@ -835,15 +730,6 @@ CREATE TABLE `z_ots_comunication` (
   `param7` varchar(255) NOT NULL,
   `delete_it` int(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `z_ots_comunication`
---
-
-INSERT INTO `z_ots_comunication` (`id`, `name`, `type`, `action`, `param1`, `param2`, `param3`, `param4`, `param5`, `param6`, `param7`, `delete_it`) VALUES
-(2, 'Crumble Numble', 'login', 'give_item', '2358', '1', '', '', 'item', 'Max Boots', '118', 1),
-(3, 'Crumble Numble', 'login', 'give_item', '18390', '1', '', '', 'item', 'Wand of Defiance', '93', 1),
-(4, 'Crumble Numble', 'login', 'give_item', '2504', '1', '', '', 'item', 'Dwaren Legs', '117', 1);
 
 -- --------------------------------------------------------
 
