@@ -1,8 +1,8 @@
 # Gesior-AAC
 Based on the official layout of tibia.com created by cipsoft.
 
-###############################################################
-Marco Oliveira, Felipe Monteiro and Gesior.pl
+###############################################################</p>
+Marco Oliveira, Felipe Monteiro and Gesior.pl</p>
 Project started in: 06/28/2017 At 5:00 p.m.
 ###############################################################
 
