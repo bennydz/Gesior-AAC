@@ -67,7 +67,7 @@ $news_content .= '
 							<img src="'.$layout_name.'/images/news/announcement.gif" width="150" height="100" border="0" alt="">
 						</div>
                     <div style="position: relative; top: -9px; margin-bottom: 10px;"><br>
-				 <font size="2px"></font><center><font size="2px"><b> IP:</b> malvera.online |&nbsp;  <b>Port:</b> 7171 |&nbsp;  <b>Version:</b> 10.00/11.00</font> <br> </a></center><br><font size="2px">Seja bem-vindo ao <b><font color="green">' . htmlspecialchars($config['server']['serverName']) . '</font></b>, contamos com o <b>RLMAP</b> mais completo de todos os servidores atualmente, principais quests <b>SEM MISSÕES</b>, Cooldown e Magias reformuladas para um PvP mais dinâmico e divertido. <b>Exp shared 100%, All Quests</b>. Diversos bugs fixados e sendo corrigidos diariamente. Venha conferir o melhor servidor de todos os tempos! Aqui sua diversao é garantida!
+				 <font size="2px"></font><center><font size="2px"><b> IP:</b> xxxx.com |&nbsp;  <b>Port:</b> 7171 |&nbsp;  <b>Version:</b> 10.00/11.00</font> <br> </a></center><br><font size="2px">Seja bem-vindo ao <b><font color="green">' . htmlspecialchars($config['server']['serverName']) . '</font></b>, contamos com o <b>RLMAP</b> mais completo de todos os servidores atualmente, principais quests <b>SEM MISSÕES</b>, Cooldown e Magias reformuladas para um PvP mais dinâmico e divertido. <b>Exp shared 100%, All Quests</b>. Diversos bugs fixados e sendo corrigidos diariamente. Venha conferir o melhor servidor de todos os tempos! Aqui sua diversao é garantida!
                 </font> </div>
 						</div>
       				</div>
