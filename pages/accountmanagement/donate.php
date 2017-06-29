@@ -99,6 +99,7 @@ if($logged) {
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>';
 		
 		if($step == 1) {
