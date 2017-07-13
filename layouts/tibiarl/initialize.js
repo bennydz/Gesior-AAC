@@ -154,7 +154,7 @@ function LoadMenu()
   document.getElementById("submenu_" + activeSubmenuItem).style.color = "white";
   document.getElementById("ActiveSubmenuItemIcon_" + activeSubmenuItem).style.visibility = "visible";
   if (self.name.lastIndexOf("&") == -1) {
-	self.name = "news=1&about=0&community=0&forum=0&account=0&support=0&library=0&shop=0&";
+	self.name = "news=1&about=0&community=0&forum=0&account=0&support=0&library=0&";
   }
   FillMenuArray();
   InitializeMenu();
